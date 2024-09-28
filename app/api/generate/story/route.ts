@@ -1,6 +1,6 @@
 import { ResStatus } from "../../common/model";
 import { NextRequest } from "next/server";
-import { getCharacterChat } from "../utils/kimi";
+import { getCharacterChat } from "@utils/kimi";
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
