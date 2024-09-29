@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![wanjie-api](https://socialify.git.ci/Encaik/wanjie-api/image?language=1&owner=1&name=1&stargazers=1&theme=Light)
 
-## Getting Started
+# 万界文字修仙游戏Api
 
-First, run the development server:
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/wanjie-api)
+
+![Alt](https://repobeats.axiom.co/api/embed/c275dcf1341463b5c8df680665bb85471f0b7994.svg "Repobeats analytics image")
+
+## 项目运行
+
+### 环境准备
+
+确保已安装 Node.js (推荐版本 v20 或以上)。
+
+### 安装依赖
+
+``` bash
+npm install
+```
+
+### 启动项目
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 常见问题
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+如果遇到依赖包版本冲突，请尝试清除缓存后重新安装依赖: npm cache clean --force && npm install
+构建失败时检查tsconfig.json配置是否正确。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 目录结构
 
-## Learn More
+app/ - 源代码存放目录
 
-To learn more about Next.js, take a look at the following resources:
+  api/ - 后端代码文件夹
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  models/ - 类型定义文件夹
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  utils/ - 工具类
