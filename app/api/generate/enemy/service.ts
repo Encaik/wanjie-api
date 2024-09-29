@@ -3,7 +3,7 @@ import { BattleCharacter } from "@models";
 import { v4 as uuidv4 } from "uuid";
 
 export function enemys(length: number, level: number = 0): BattleCharacter[] {
-    return Array.from({ length }, (_, i) => {
+    return Array.from({ length }, () => {
       const innateInfo = {
         hp: Math.round(Math.random() * 40) + 100,
         mp: Math.round(Math.random() * 40) + 100,

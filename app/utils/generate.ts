@@ -44,7 +44,7 @@ export function getWorldLevelMap(type: EnvType) {
 export function getMethodSuit(length: number, type: EnvType): MethodSuit[] {
   const METHODS_SUITS_NAMES = METHODS_SUITS[type];
   const METHODS_SUITS_LEN = METHODS_SUITS_NAMES.length;
-  return Array.from({ length }, (_, i) => {
+  return Array.from({ length }, () => {
     return {
       name: METHODS_SUITS_NAMES[Math.floor(Math.random() * METHODS_SUITS_LEN)]
     };

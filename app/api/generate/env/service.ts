@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 export function envs(length: number): { envs: Env[]; galaxiesId: string } {
   const galaxiesId = `galaxie-${uuidv4()}`;
   return {
-    envs: Array.from({ length }, (_, i) => {
+    envs: Array.from({ length }, () => {
       const weight: number = Number((Math.random() * 0.5 + 0.75).toFixed(2));
       const type: EnvType = Object.values(EnvType)[Math.floor(Math.random() * Object.keys(EnvType).length)];
       return {
