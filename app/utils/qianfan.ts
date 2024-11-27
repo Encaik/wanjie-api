@@ -1,11 +1,10 @@
 import { setEnvVariable, ChatCompletion } from '@baiducloud/qianfan';
 import { InitCharacter, Env } from '../models';
-import { createClient } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
 
-const kv = createClient({
-  url: process.env.WANJIE_API_REST_API_URL,
-  token: process.env.WANJIE_API_REST_API_TOKEN,
-  automaticDeserialization: false
+const redis = new Redis({
+  url: process.env.WANJIE_API_KV_REST_API_URL,
+  token: process.env.WANJIE_API_KV_REST_API_TOKEN
 });
 
 export async function getCharacterChat(character: InitCharacter, env: Env) {
@@ -18,8 +17,8 @@ export async function getCharacterChat(character: InitCharacter, env: Env) {
 }
 
 export async function getChat(system: string, role: string) {
-  const QIANFAN_ACCESS_KEY: string | null = await kv.get('QIANFAN_ACCESS_KEY');
-  const QIANFAN_SECRET_KEY: string | null = await kv.get('QIANFAN_SECRET_KEY');
+  const QIANFAN_ACCESS_KEY: string | null = await redis.get('QIANFAN_ACCESS_KEY');
+  const QIANFAN_SECRET_KEY: string | null = await redis.get('QIANFAN_SECRET_KEY');
   if (!QIANFAN_ACCESS_KEY || !QIANFAN_SECRET_KEY) {
     throw new Error('token 错误');
   }

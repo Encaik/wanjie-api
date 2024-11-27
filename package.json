@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@baiducloud/qianfan": "^0.1.9",
+    "@upstash/redis": "^1.34.3",
     "@vercel/kv": "^3.0.0",
     "next": "14.2.13",
     "openai": "^4.65.0",
