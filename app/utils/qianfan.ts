@@ -24,9 +24,9 @@ export async function getChat(system: string, role: string) {
   }
   setEnvVariable('QIANFAN_ACCESS_KEY', QIANFAN_ACCESS_KEY);
   setEnvVariable('QIANFAN_SECRET_KEY', QIANFAN_SECRET_KEY);
-  const client = new ChatCompletion();
-  const resp = await client.chat(
-    {
+  try {
+    const client = new ChatCompletion({ Endpoint: 'ernie_speed' });
+    const resp = await client.chat({
       messages: [
         { role: 'user', content: '你好，帮我生成一个背景故事' },
         {
@@ -35,8 +35,9 @@ export async function getChat(system: string, role: string) {
         },
         { role: 'user', content: role }
       ]
-    },
-    'ERNIE-Speed-8K'
-  );
-  return resp.result;
+    });
+    return resp.result;
+  } catch (error) {
+    throw new Error('ai对话生成错误');
+  }
 }
