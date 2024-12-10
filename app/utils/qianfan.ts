@@ -37,7 +37,7 @@ export async function getChat(system: string, role: string) {
       ]
     });
     return resp.result;
-  } catch (error) {
+  } catch {
     throw new Error('ai对话生成错误');
   }
 }
